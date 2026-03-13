@@ -1,0 +1,55 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", sans-serif;
+  
+  --color-bg-white: #FFFFFF;
+  --color-bg-soft: #F2F2F2;
+  --color-bg-light: #DADADA;
+  --color-ink-dark: #1A1A1A;
+  --color-ink-graphite: #333333;
+  --color-accent-blue: #4A90E2;
+  --color-accent-orange: #FF6B3D;
+}
+
+@layer base {
+  body {
+    @apply bg-bg-white text-ink-dark font-sans selection:bg-accent-orange/20;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display tracking-tight;
+  }
+}
+
+/* Custom Utilities */
+.torn-paper {
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 40' preserveAspectRatio='none'%3E%3Cpath d='M0,20 L20,15 L40,25 L60,10 L80,30 L100,15 L120,25 L140,10 L160,30 L180,15 L200,25 L220,10 L240,30 L260,15 L280,25 L300,10 L320,30 L340,15 L360,25 L380,10 L400,30 L420,15 L440,25 L460,10 L480,30 L500,15 L520,25 L540,10 L560,30 L580,15 L600,25 L620,10 L640,30 L660,15 L680,25 L700,10 L720,30 L740,15 L760,25 L780,10 L800,30 L820,15 L840,25 L860,10 L880,30 L900,15 L920,25 L940,10 L960,30 L980,15 L1000,25 L1020,10 L1040,30 L1060,15 L1080,25 L1100,10 L1120,30 L1140,15 L1160,25 L1180,10 L1200,30 L1200,40 L0,40 Z' fill='black'/%3E%3C/svg%3E");
+  mask-size: 100% 40px;
+  mask-repeat: no-repeat;
+  mask-position: bottom;
+}
+
+.torn-paper-top {
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 40' preserveAspectRatio='none'%3E%3Cpath d='M0,20 L20,25 L40,15 L60,30 L80,10 L100,25 L120,15 L140,30 L160,10 L180,25 L200,15 L220,30 L240,10 L260,25 L280,15 L300,30 L320,10 L340,25 L360,15 L380,30 L400,10 L420,25 L440,15 L460,30 L480,10 L500,25 L520,15 L540,30 L560,10 L580,25 L600,15 L620,30 L640,10 L660,25 L680,15 L700,30 L720,10 L740,25 L760,15 L780,30 L800,10 L820,25 L840,15 L860,30 L880,10 L900,25 L920,15 L940,30 L960,10 L980,25 L1000,15 L1020,30 L1040,10 L1060,25 L1080,15 L1100,30 L1120,10 L1140,25 L1160,15 L1180,30 L1200,10 L1200,0 L0,0 Z' fill='black'/%3E%3C/svg%3E");
+  mask-size: 100% 40px;
+  mask-repeat: no-repeat;
+  mask-position: top;
+}
+
+.grid-pattern {
+  background-image: radial-gradient(circle, #DADADA 1px, transparent 1px);
+  background-size: 30px 30px;
+}
+
+.ruler-marks-v {
+  background-image: linear-gradient(to bottom, #333 1px, transparent 1px);
+  background-size: 100% 10px;
+}
+
+.ruler-marks-h {
+  background-image: linear-gradient(to right, #333 1px, transparent 1px);
+  background-size: 10px 100%;
+}
